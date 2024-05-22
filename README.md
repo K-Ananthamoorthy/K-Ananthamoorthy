@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm K Ananthamoorthi Holla</h1>
 <h3 align="center">Enthusiastic Machine learning Engineering student & Evolving developer.</h3>
-<img align="right" alt="coding" width="400" src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif">
+<img align="right" alt="coding" width="250" src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif">
 
 - 🔭 I’m currently working on [Attendance Tracking system](https://attend-class.netlify.app/)
 
