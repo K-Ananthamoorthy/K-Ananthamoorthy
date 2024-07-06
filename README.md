@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/K-Ananthamoorthy/LMS-AI"><img src="https://img.shields.io/badge/Project-Attendance_Tracking_System-blue"></a>
+  <a href="https://github.com/K-Ananthamoorthy/LMS-AI"><img src="https://img.shields.io/badge/Project-LMS-AI-blue"></a>
   <a href="https://karo-padhai.netlify.app/"><img src="https://img.shields.io/badge/Collaboration-All_in_one_Engineering_Student_website-green"></a>
   <a href="https://bit.ly/ananthamoorthi"><img src="https://img.shields.io/badge/Portfolio-View-ff69b4"></a>
 </p>
