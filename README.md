@@ -6,12 +6,12 @@
 </p>
 
 <p align="center">
-  <a href="https://attend-class.netlify.app/"><img src="https://img.shields.io/badge/Project-Attendance_Tracking_System-blue"></a>
+  <a href="https://github.com/K-Ananthamoorthy/LMS-AI"><img src="https://img.shields.io/badge/Project-Attendance_Tracking_System-blue"></a>
   <a href="https://karo-padhai.netlify.app/"><img src="https://img.shields.io/badge/Collaboration-All_in_one_Engineering_Student_website-green"></a>
   <a href="https://bit.ly/ananthamoorthi"><img src="https://img.shields.io/badge/Portfolio-View-ff69b4"></a>
 </p>
 
-- 🔭 I’m currently working on [Attendance Tracking System](https://attend-class.netlify.app/)
+- 🔭 I’m currently working on [Learning management system with AI](https://github.com/K-Ananthamoorthy/LMS-AI)
 - 🌱 I’m currently learning **React JS, Flutter, Machine Learning**
 - 👯 I’m looking to collaborate on [All in one Engineering Student Website](https://karo-padhai.netlify.app/)
 - 👨‍💻 All of my projects are available at [https://bit.ly/ananthamoorthi](https://bit.ly/ananthamoorthi)
