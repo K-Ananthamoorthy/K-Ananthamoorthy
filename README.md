@@ -14,7 +14,7 @@
 - 🔭 I’m currently working on [Learning management system with AI](https://github.com/K-Ananthamoorthy/LMS-AI)
 - 🌱 I’m currently learning **React JS, Flutter, Machine Learning**
 - 👯 I’m looking to collaborate on [All in one Engineering Student Website](https://karo-padhai.netlify.app/)
-- 👨‍💻 All of my projects are available at [https://bit.ly/ananthamoorthi](https://bit.ly/ananthamoorthi)
+- 👨‍💻 All of my projects are available at [https://bit.ly/ananthamoorthi]([https://bit.ly/ananthamoorthi](https://ananthamoorthi.netlify.app/))
 - 📫 How to reach me **ananthamurthy2004@gmail.com**
 - ⚡ Fun fact **Nah Nah**
 
