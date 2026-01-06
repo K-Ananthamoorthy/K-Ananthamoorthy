@@ -10,6 +10,15 @@
   <a href="https://ananthamoorthi.dev"><img src="https://img.shields.io/badge/Projects-View-green"></a>
   <a href="https://bit.ly/ananthamoorthi"><img src="https://img.shields.io/badge/Portfolio-View-ff69b4"></a>
 </p>
+<p align="center">
+  <a href="https://www.linkedin.com/in/ananthamoorthi/" target="_blank">
+    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" width="32" height="32" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://www.instagram.com/ananthamoorthi.in/" target="_blank">
+    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" width="32" height="32" />
+  </a>
+</p>
 
 ---
 
@@ -100,9 +109,8 @@ Currently working on **mysutra.ai**, an AI Health Companion platform focused on 
 
 ---
 
-### 🌐 Projects
-- 🔗 All projects: **https://ananthamoorthi.dev**
-- 📁 Portfolio: **https://bit.ly/ananthamoorthi**
+### 🌐 Portfolio
+- 🔗 Portfolio: **https://ananthamoorthi.dev**
 
 ---
 
