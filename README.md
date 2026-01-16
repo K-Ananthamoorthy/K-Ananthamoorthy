@@ -36,7 +36,7 @@ Currently working on **mysutra.ai**, an AI Health Companion platform focused on 
 
 ### 🚀 Current Work
 
-- 🔭 **Founder / Product Engineer – mysutra.ai**  
+- 🔭 **Product Engineer – mysutra.ai**  
   **AI Health Companion Platform**
   - 🧠 Scan → Decode → Eat Better
   - 🥗 AI-based food analysis
