@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm K Ananthamoorthi Holla</h1>
-<h3 align="center">AI Product Engineer @ SutraAI Solutions LLP | Building AI products from idea to production</h3>
+<h3 align="center">Building AI products from idea to production @ SutraAI Solutions LLP</h3>
 
 <p align="center">
   <a href="https://mysutra.ai"><img src="https://img.shields.io/badge/Building-mysutra.ai-28C8C0"></a>
