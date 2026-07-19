@@ -13,7 +13,7 @@
 
 I build and ship AI-powered products end to end. At SutraAI, I led the development of **[mysutra.ai](https://mysutra.ai)**, an AI Health Intelligence platform live on the Google Play Store, owning the Flutter mobile app, the core backend, and the AI backend (food analysis, diet tracking, personalized insights, and AI coaching).
 
-- B.E. in Artificial Intelligence & Machine Learning, SMVITM (2025), CGPA 8.5
+- B.E. in Artificial Intelligence & Machine Learning, SMVITM (2025), CGPA 8.4
 - Focus areas: LLM integration, RAG pipelines, prompt engineering, mobile AI products
 - Interested in on-device inference and making AI work offline
 
