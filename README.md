@@ -7,72 +7,63 @@
   <a href="mailto:ananthamoorthi04@gmail.com"><img src="https://img.shields.io/badge/Email-ananthamoorthi04-D14836?style=flat-square&logo=gmail&logoColor=white"></a>
 </p>
 
-## About
+I build LLM systems that hold up in production. Retrieval that is grounded in real sources, output that is validated before a user sees it, and deterministic code making the calls that have to be reproducible.
 
-I am an AI engineer based in Bengaluru with over a year of production experience building LLM systems end to end.
+A model is good at language. It should not be the thing that decides whether a number is dangerous, or commits an action you cannot undo. Most of what I build is some version of that split.
 
-Most of that came from being the founding engineer at SutraAI Solutions, where I built the AI backend for [mysutra.ai](https://mysutra.ai), a health intelligence platform that is live on the Google Play Store. Working on health content taught me to care less about clever prompts and more about whether the output can be trusted.
+**Right now** I am building agentic systems and pushing small models to run useful workloads fully offline, on device.
 
-That is what I optimise for now: retrieval that is grounded in real sources, responses that are validated before they reach a user, and deterministic code making the decisions that have to be reproducible. An LLM is good at language. It should not be the thing that commits an irreversible action.
+## mySutra.ai
 
-Lately I have been spending my time on agentic systems, LLM evaluation, and getting models to run offline on device.
+I was the founding engineer at SutraAI Solutions, where I built the AI behind [mysutra.ai](https://mysutra.ai), a health app that is live on the Google Play Store.
 
-## Experience
+You photograph a meal, the app works out what you ate, and turns that into insight you can act on, with an AI coach to make sense of the trend rather than just the number.
 
-### AI Engineer, Founding Team
-**SutraAI Solutions LLP** &nbsp;·&nbsp; Manipal, Karnataka &nbsp;·&nbsp; Jun 2025 to Jul 2026
+I owned the AI side of it from first prototype to launch, built the backend it runs on, and shipped the mobile app to the Play Store. Being the founding engineer meant deciding what the product should do as much as building it.
 
-- Built the production AI backend for mysutra.ai end to end, covering LLM integration, prompt engineering, and multi-step LangGraph workflows with tool calling and conditional routing.
-- Powered meal analysis, personalised health insights, and an AI coach on top of that pipeline.
-- Designed and indexed a RAG pipeline over a nutrition knowledge base normalised from open sources such as Open Food Facts and government food composition data, which improved accuracy and cut per query search cost.
-- Ran domain adaptation fine tuning experiments with Unsloth on open weight Llama and GPT-OSS models, and curated a labelled food dataset of roughly 13,000 images for custom vision training.
-- Implemented health content guardrails covering medical advice boundaries, disclaimers, and refusal handling, then validated output with retrieval quality evaluation against reference data.
-- Built the supporting REST APIs and PostgreSQL data models, and shipped the companion Flutter app to the Play Store.
+Health is also where a confident wrong answer does real damage, so a lot of the work was not about making the AI smarter. It was about deciding what it was allowed to say, and proving it stayed inside that line.
 
-### Project Intern
-**IoTracX** &nbsp;·&nbsp; Manipal, Karnataka &nbsp;·&nbsp; Jan 2025 to May 2025
-
-- Worked on on-device LLM inference for offline use, tuning latency and memory footprint for constrained mobile hardware.
-- Ran vision language model and fine tuning experiments, and refined datasets to improve training data quality.
-
-### Intern, IT Department
-**Wipro Consumer Care & Lighting** &nbsp;·&nbsp; Bengaluru, Karnataka &nbsp;·&nbsp; Nov 2023
-
-- Contributed to internal IT prototypes for a market survey application and a vendor portal, working on Node.js backend services and React frontend components.
-- First hands-on exposure to enterprise practices: requirement discussions, version control workflows, and iterative delivery inside an IT team.
-
-## Projects
+## Featured project
 
 ### [Project Sentinel](https://github.com/K-Ananthamoorthy/Sentinel)
-Autonomous multi-agent cold-chain monitoring
+**Autonomous multi-agent cold-chain monitoring**
 
-An event-driven backend that watches refrigerated pharmaceutical shipments in real time and reroutes them on its own when the temperature drifts out of range.
+Vaccines and other refrigerated medicine spoil quietly. By the time someone notices the temperature slipped, the shipment is already lost. Sentinel watches those shipments in real time and reroutes them to the nearest cold storage on its own, before the cargo is gone.
 
-- A five-stage LangGraph pipeline handles the decision: assess risk, select a cold storage warehouse, score the options on safety, time and cost, then apply the reroute.
-- Redis pub/sub separates the simulation from LLM inference, so model calls that take several seconds never stall the real-time loop. Four concurrent asyncio workers handle simulation, breach detection, and WebSocket fan-out.
-- The committing decision is deterministic weighted scoring, not the model, so every reroute can be reproduced and audited. Output is validated with Pydantic and IDs are cross-checked against the database to contain hallucination.
+- A five-stage LangGraph pipeline runs the decision: assess the risk, find candidate cold storage warehouses, score them on safety, time and cost, then commit the reroute.
+- Redis pub/sub separates the simulation from model inference, so calls that take several seconds never stall the real-time loop. Four asyncio workers handle simulation, breach detection, and WebSocket fan-out.
+- The final commit is deterministic weighted scoring, not the model. Every reroute can be reproduced and audited afterwards, which is the whole point when the cargo is pharmaceutical. Pydantic validates output and IDs are checked against the database.
 
-`Python` `FastAPI` `LangGraph` `Groq (Llama 3.3 70B)` `PostgreSQL` `SQLAlchemy` `Redis` `Docker` `WebSockets` `JWT`
+`Python` `FastAPI` `LangGraph` `Groq (Llama 3.3 70B)` `PostgreSQL` `Redis` `Docker` `WebSockets`
+
+## More projects
+
+### [PlainLabs](https://github.com/K-Ananthamoorthy/plainlabs)
+**Offline lab-report explainer on a small on-device model**
+
+Upload a blood report, get every value explained in plain language and flagged normal, borderline, abnormal, or urgent, with questions worth asking a doctor.
+
+- Runs fully offline on MedGemma 4B via Ollama. A blood report is health data, and it should not need a cloud chatbot to become readable.
+- The model only does language. Every severity flag is a deterministic comparison against curated reference ranges, never model output, which is what makes a 4B model safe to put in front of a health tool.
+- Built as a LangGraph StateGraph, alternating between code and model on purpose so each step stays isolated and testable.
+
+`Python` `LangGraph` `Ollama (MedGemma 4B)` `100% offline`
 
 ### [Doc Companion](https://github.com/K-Ananthamoorthy/student-assistant-rag)
-Agentic RAG for PDFs, fully offline
+**Agentic RAG for PDFs, fully offline**
 
-A LangGraph agent that decides how to answer each question instead of retrieving blindly, and cites the page it got the answer from.
+A LangGraph agent that decides how to answer each question instead of retrieving blindly, and cites the page it came from.
 
-- A few-shot classifier routes every question, scoring 8 out of 8 on a routing testset. The agent decides when to retrieve, grades its own chunks, and rewrites the query once when retrieval misses.
-- Corpus level questions skip top-k entirely and are answered from per-document cards built at ingestion, because no set of k chunks can represent a whole document collection.
-- Guardrails are graduated into verified, caution, and refuse, pairing a deterministic citation guard with an LLM grounding judge. I moved to plain text verdicts after measuring that JSON constrained output was silently defaulting to false on a 3B model.
-- Runs fully offline on Ollama over persistent ChromaDB, with a golden set eval harness that scores faithfulness and correctness.
+- A few-shot classifier routes every question, 8 out of 8 on a routing testset. The agent chooses when to retrieve, grades its own chunks, and rewrites the query once when retrieval misses.
+- Corpus level questions skip top-k entirely and are answered from per-document cards built at ingestion, because no set of k chunks can represent a whole collection.
+- Guardrails are graduated into verified, caution, and refuse. I switched to plain text verdicts after measuring that JSON constrained output silently defaulted to false on a 3B model.
 
 `Python` `LangGraph` `LangChain` `Ollama` `ChromaDB` `Streamlit`
 
 ### [LocalGPT](https://github.com/K-Ananthamoorthy/localgpt-llama.rn)
-Offline on-device AI chat &nbsp;·&nbsp; [Download APK](https://github.com/K-Ananthamoorthy/localgpt-llama.rn/releases)
+**On-device AI chat** &nbsp;·&nbsp; [Download APK](https://github.com/K-Ananthamoorthy/localgpt-llama.rn/releases)
 
-A privacy-first mobile chat app that runs quantized LLMs entirely on the phone.
-
-- Everything happens on device through llama.cpp, so the app works with no network and no user data ever leaves the phone.
-- Inference is accelerated by offloading computation to the phone GPU where one is available, which noticeably improves latency on mid-range hardware.
+Quantized LLMs running entirely on the phone through llama.cpp. No network, no data leaving the device, with GPU offload where available to keep latency usable on mid-range hardware.
 
 `React Native` `llama.cpp` `Quantized open-source LLMs`
 
@@ -86,15 +77,10 @@ A privacy-first mobile chat app that runs quantized LLMs entirely on the phone.
 | **Databases** | PostgreSQL, pgvector, ChromaDB, Supabase, Firebase |
 | **Backend and Tools** | REST API design, Docker, Git, Linux |
 
-## Education
+## Reach me
 
-**B.E. in Artificial Intelligence and Machine Learning**, 2021 to 2025
-Visvesvaraya Technological University (VTU), Belagavi &nbsp;·&nbsp; CGPA 8.4
+Happy to talk about AI engineering work, or anything above.
 
-## Contact
+[ananthamoorthi04@gmail.com](mailto:ananthamoorthi04@gmail.com) &nbsp;·&nbsp; [ananthamoorthi.dev](https://ananthamoorthi.dev) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/ananthamoorthi/)
 
-Open to conversations about AI engineering roles, or about anything above.
-
-- Email: [ananthamoorthi04@gmail.com](mailto:ananthamoorthi04@gmail.com)
-- Portfolio: [ananthamoorthi.dev](https://ananthamoorthi.dev)
-- LinkedIn: [in/ananthamoorthi](https://www.linkedin.com/in/ananthamoorthi/)
+<sub>B.E. in Artificial Intelligence and Machine Learning, Visvesvaraya Technological University (VTU), Belagavi, 2025.</sub>
